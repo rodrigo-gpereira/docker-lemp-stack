@@ -1,0 +1,140 @@
+2019/11/13 19:52:45 [emerg] 1#1: cannot load certificate "/var/www/certs/dev.tcotton.com.br.pem": BIO_new_file() failed (SSL: error:02001002:system library:fopen:No such file or directory:fopen('/var/www/certs/dev.tcotton.com.br.pem','r') error:2006D080:BIO routines:BIO_new_file:no such file)
+2019/11/13 19:54:27 [emerg] 1#1: cannot load certificate "/var/www/certs/dev.tcotton.com.br.pem": BIO_new_file() failed (SSL: error:02001002:system library:fopen:No such file or directory:fopen('/var/www/certs/dev.tcotton.com.br.pem','r') error:2006D080:BIO routines:BIO_new_file:no such file)
+2019/11/13 19:59:55 [error] 8#8: *1 directory index of "/var/www/public/" is forbidden, client: 172.24.0.1, server: localhost, request: "GET / HTTP/1.1", host: "dev.tcotton.com.br"
+2019/11/13 19:59:55 [error] 8#8: *3 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.24.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.24.0.2:9000", host: "dev.tcotton.com.br", referrer: "http://dev.tcotton.com.br/"
+2019/11/13 20:06:12 [error] 7#7: *2 directory index of "/var/www/public/" is forbidden, client: 172.24.0.1, server: localhost, request: "GET / HTTP/1.1", host: "dev.tcotton.com.br"
+2019/11/13 21:21:25 [error] 7#7: *36 directory index of "/var/www/public/" is forbidden, client: 172.24.0.1, server: localhost, request: "GET / HTTP/1.1", host: "dev.tcotton.com.br"
+2019/11/13 21:21:25 [error] 7#7: *36 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.24.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.24.0.4:9000", host: "dev.tcotton.com.br", referrer: "https://dev.tcotton.com.br/"
+2019/11/13 21:21:26 [error] 7#7: *36 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.24.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.24.0.4:9000", host: "dev.tcotton.com.br", referrer: "https://dev.tcotton.com.br/"
+2019/11/14 11:32:05 [error] 10#10: *13 FastCGI sent in stderr: "PHP message: Erro de banco de dados do WordPress Unknown column 'ttc_' in 'field list' para a consulta SELECT ttc_" while reading response header from upstream, client: 172.24.0.1, server: localhost, request: "POST /wp-admin/setup-config.php?step=2 HTTP/1.1", upstream: "fastcgi://172.24.0.3:9000", host: "dev.tcotton.com.br", referrer: "https://dev.tcotton.com.br/wp-admin/setup-config.php?step=1&language=pt_BR"
+2019/11/14 11:41:17 [error] 6#6: *2 FastCGI sent in stderr: "PHP message: Erro de banco de dados do WordPress Unknown column 'ttc_' in 'field list' para a consulta SELECT ttc_" while reading response header from upstream, client: 172.24.0.1, server: localhost, request: "POST /wp-admin/setup-config.php?step=2 HTTP/1.1", upstream: "fastcgi://172.24.0.3:9000", host: "dev.tcotton.com.br", referrer: "https://dev.tcotton.com.br/wp-admin/setup-config.php?step=1&language=pt_BR"
+2019/11/26 16:41:43 [alert] 6#6: *347 pread() read only 2325 of 2343 from "/var/www/public/wp-content/themes/tct/dist/css/style.css" while sending response to client, client: 172.24.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/style.css?ver=1.0.0 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/"
+2019/12/03 16:42:25 [error] 6#6: *211 connect() failed (113: No route to host) while connecting to upstream, client: 172.24.0.1, server: localhost, request: "POST /wp-admin/admin-ajax.php HTTP/1.1", upstream: "fastcgi://172.24.0.2:9000", host: "dev.tcotton.com.br", referrer: "https://dev.tcotton.com.br/wp-admin/site-health.php"
+2019/12/03 16:44:10 [error] 6#6: *213 connect() failed (113: No route to host) while connecting to upstream, client: 172.24.0.1, server: localhost, request: "POST /wp-admin/admin-ajax.php HTTP/1.1", upstream: "fastcgi://172.24.0.2:9000", host: "dev.tcotton.com.br", referrer: "https://dev.tcotton.com.br/wp-admin/site-health.php"
+2019/12/03 16:46:06 [error] 6#6: *215 connect() failed (113: No route to host) while connecting to upstream, client: 172.24.0.1, server: localhost, request: "POST /wp-admin/admin-ajax.php HTTP/1.1", upstream: "fastcgi://172.24.0.2:9000", host: "dev.tcotton.com.br", referrer: "https://dev.tcotton.com.br/wp-admin/site-health.php"
+2019/12/03 16:47:06 [error] 6#6: *217 connect() failed (113: No route to host) while connecting to upstream, client: 172.24.0.1, server: localhost, request: "POST /wp-admin/admin-ajax.php HTTP/1.1", upstream: "fastcgi://172.24.0.2:9000", host: "dev.tcotton.com.br", referrer: "https://dev.tcotton.com.br/wp-admin/site-health.php"
+2019/12/03 16:49:06 [error] 6#6: *219 connect() failed (113: No route to host) while connecting to upstream, client: 172.24.0.1, server: localhost, request: "POST /wp-admin/admin-ajax.php HTTP/1.1", upstream: "fastcgi://172.24.0.2:9000", host: "dev.tcotton.com.br", referrer: "https://dev.tcotton.com.br/wp-admin/site-health.php"
+2019/12/03 14:51:06 [alert] 6#6: *561 pread() read only 2353 of 2356 from "/var/www/public/wp-content/themes/tct/style.css" while sending response to client, client: 172.24.0.1, server: localhost, request: "GET /wp-content/themes/tct/style.css?ver=5.3 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/"
+2019/12/03 14:51:14 [alert] 6#6: *566 pread() read only 2353 of 2356 from "/var/www/public/wp-content/themes/tct/style.css" while sending response to client, client: 172.24.0.1, server: localhost, request: "GET /wp-content/themes/tct/style.css?ver=all HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/"
+2019/12/03 14:51:18 [alert] 6#6: *573 pread() read only 2582 of 2585 from "/var/www/public/wp-content/themes/tct/style.css" while sending response to client, client: 172.24.0.1, server: localhost, request: "GET /wp-content/themes/tct/style.css?ver=all HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/"
+2019/12/03 16:00:21 [alert] 6#6: *1036 pread() read only 32525 of 32551 from "/var/www/public/wp-content/themes/tct/style.css" while sending response to client, client: 172.24.0.1, server: localhost, request: "GET /wp-content/themes/tct/style.css?ver=5.3 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/minha-conta/"
+2019/12/03 17:02:51 [alert] 6#6: *2032 pread() read only 16607 of 16991 from "/var/www/public/wp-content/themes/tct/style.css" while sending response to client, client: 172.24.0.1, server: localhost, request: "GET /wp-content/themes/tct/style.css?ver=5.3 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/"
+2019/12/03 18:01:52 [alert] 6#6: *2511 pread() read only 16685 of 16735 from "/var/www/public/wp-content/themes/tct/style.css" while sending response to client, client: 172.24.0.1, server: localhost, request: "GET /wp-content/themes/tct/style.css?ver=5.3 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/ola-mundo/"
+2019/12/03 18:31:45 [alert] 6#6: *3108 pread() read only 22521 of 22551 from "/var/www/public/wp-content/themes/tct/style.css" while sending response to client, client: 172.24.0.1, server: localhost, request: "GET /wp-content/themes/tct/style.css?ver=5.3 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/"
+2019/12/05 17:17:07 [alert] 9#9: *5762 pread() read only 23224 of 23236 from "/var/www/public/wp-content/themes/tct/style.css" while sending response to client, client: 172.24.0.1, server: localhost, request: "GET /wp-content/themes/tct/style.css?ver=5.3 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/loja/"
+2019/12/05 17:17:12 [alert] 9#9: *5800 pread() read only 23224 of 23236 from "/var/www/public/wp-content/themes/tct/style.css" while sending response to client, client: 172.24.0.1, server: localhost, request: "GET /wp-content/themes/tct/style.css?ver=5.3 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/loja/"
+2019/12/05 17:17:21 [alert] 9#9: *5834 pread() read only 23224 of 23236 from "/var/www/public/wp-content/themes/tct/style.css" while sending response to client, client: 172.24.0.1, server: localhost, request: "GET /wp-content/themes/tct/style.css?ver=5.3 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/loja/"
+2019/12/05 17:17:31 [alert] 9#9: *5872 pread() read only 23019 of 23236 from "/var/www/public/wp-content/themes/tct/style.css" while sending response to client, client: 172.24.0.1, server: localhost, request: "GET /wp-content/themes/tct/style.css?ver=5.3 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/loja/"
+2019/12/05 17:17:34 [alert] 9#9: *5908 pread() read only 23019 of 23236 from "/var/www/public/wp-content/themes/tct/style.css" while sending response to client, client: 172.24.0.1, server: localhost, request: "GET /wp-content/themes/tct/style.css?ver=5.3 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/loja/"
+2019/12/05 17:17:40 [alert] 9#9: *5944 pread() read only 23019 of 23236 from "/var/www/public/wp-content/themes/tct/style.css" while sending response to client, client: 172.24.0.1, server: localhost, request: "GET /wp-content/themes/tct/style.css?ver=5.3 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/pagina-exemplo/"
+2019/12/05 17:17:43 [alert] 9#9: *5960 pread() read only 23019 of 23236 from "/var/www/public/wp-content/themes/tct/style.css" while sending response to client, client: 172.24.0.1, server: localhost, request: "GET /wp-content/themes/tct/style.css?ver=5.3 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/loja/"
+2019/12/12 10:17:12 [error] 7#7: *1 connect() failed (113: No route to host) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "dev.tcotton.com.br"
+2019/12/12 10:17:15 [error] 7#7: *1 connect() failed (113: No route to host) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "dev.tcotton.com.br", referrer: "https://dev.tcotton.com.br/"
+2019/12/12 10:18:28 [error] 7#7: *6 connect() failed (113: No route to host) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "dev.tcotton.com.br"
+2019/12/12 10:18:31 [error] 7#7: *6 connect() failed (113: No route to host) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "dev.tcotton.com.br", referrer: "https://dev.tcotton.com.br/"
+2019/12/12 10:34:54 [error] 7#7: *19 connect() failed (113: No route to host) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "dev.tcotton.com.br"
+2019/12/12 10:34:57 [error] 7#7: *19 connect() failed (113: No route to host) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "dev.tcotton.com.br", referrer: "https://dev.tcotton.com.br/"
+2019/12/12 10:35:48 [error] 7#7: *22 connect() failed (113: No route to host) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "dev.tcotton.com.br"
+2019/12/12 10:35:51 [error] 7#7: *22 connect() failed (113: No route to host) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "dev.tcotton.com.br", referrer: "https://dev.tcotton.com.br/"
+2019/12/12 12:34:53 [alert] 7#7: *2323 pread() read only 26811 of 26886 from "/var/www/public/wp-content/themes/tct/dist/js/main.js" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/js/main.js?ver=1.0.0 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/"
+2019/12/12 12:34:54 [alert] 7#7: *2350 pread() read only 26811 of 26886 from "/var/www/public/wp-content/themes/tct/dist/js/main.js" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/js/main.js?ver=1.0.0 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://192.168.0.27:3000/"
+2019/12/12 12:35:07 [alert] 7#7: *2381 pread() read only 26811 of 26886 from "/var/www/public/wp-content/themes/tct/dist/js/main.js" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/js/main.js?ver=1.0.0 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://192.168.0.27:3000/"
+2019/12/12 12:35:08 [alert] 7#7: *2399 pread() read only 26811 of 26886 from "/var/www/public/wp-content/themes/tct/dist/js/main.js" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/js/main.js?ver=1.0.0 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/"
+2019/12/12 17:03:48 [alert] 7#7: *9241 pread() read only 18981 of 32768 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/loja/"
+2019/12/12 17:03:58 [alert] 7#7: *9287 pread() read only 18981 of 32768 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://17f14a75.ngrok.io/"
+2019/12/12 17:04:32 [alert] 7#7: *9331 pread() read only 18981 of 32768 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/loja/"
+2019/12/13 11:45:01 [alert] 7#7: *15454 pread() read only 5046 of 5066 from "/var/www/public/wp-content/themes/tct/dist/js/main.js" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/js/main.js?ver=1.0.0 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/produto/album/"
+2019/12/13 11:45:07 [alert] 7#7: *15507 pread() read only 5046 of 5066 from "/var/www/public/wp-content/themes/tct/dist/js/main.js" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/js/main.js?ver=1.0.0 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/produto/album/"
+2019/12/13 14:23:35 [alert] 7#7: *6252 pread() read only 25571 of 25572 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3.1 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3002/loja/?orderby=menu_order"
+2019/12/13 14:24:36 [alert] 6#6: *6420 pread() read only 25567 of 25571 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3.1 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3002/categoria-produto/bordados/"
+2019/12/13 14:24:50 [alert] 7#7: *6480 pread() read only 25543 of 25567 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3.1 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3002/categoria-produto/bordados/"
+2019/12/13 14:34:12 [alert] 7#7: *6954 pread() read only 25390 of 25527 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3.1 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3002/loja/"
+2019/12/13 14:34:17 [alert] 6#6: *6993 pread() read only 25390 of 25527 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3.1 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3002/loja/"
+2019/12/13 14:34:20 [alert] 6#6: *7032 pread() read only 25390 of 25527 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3.1 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3002/loja/"
+2019/12/13 16:32:43 [alert] 6#6: *8209 pread() read only 26907 of 26914 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3.1 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/"
+2019/12/13 16:32:46 [alert] 6#6: *8235 pread() read only 26907 of 26914 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3.1 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/"
+2019/12/13 16:33:00 [alert] 6#6: *8289 pread() read only 26907 of 26914 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3.1 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/"
+2019/12/13 16:33:11 [alert] 6#6: *8345 pread() read only 26907 of 26914 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3.1 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/"
+2019/12/13 16:33:23 [alert] 6#6: *8398 pread() read only 26907 of 26914 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3.1 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/"
+2019/12/13 16:37:39 [alert] 6#6: *8736 pread() read only 26872 of 26907 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3.1 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/loja/"
+2019/12/13 16:37:43 [alert] 6#6: *8775 pread() read only 26872 of 26907 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3.1 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/loja/"
+2019/12/13 16:37:48 [alert] 6#6: *8812 pread() read only 26844 of 26907 from "/var/www/public/wp-content/themes/tct/dist/css/tct.css" while sending response to client, client: 172.18.0.1, server: localhost, request: "GET /wp-content/themes/tct/dist/css/tct.css?ver=5.3.1 HTTP/1.1", host: "dev.tcotton.com.br", referrer: "https://localhost:3000/loja/"
+2019/12/14 15:12:26 [error] 6#6: *20 FastCGI sent in stderr: "PHP message: Erro de banco de dados do WordPress Unknown column 'wp_' in 'field list' para a consulta SELECT wp_" while reading response header from upstream, client: 172.20.0.1, server: localhost, request: "POST /wp-admin/setup-config.php?step=2 HTTP/1.1", upstream: "fastcgi://172.20.0.2:9000", host: "dev.apinunker.com.br", referrer: "https://dev.apinunker.com.br/wp-admin/setup-config.php?step=1&language=pt_BR"
+2019/12/23 14:47:01 [error] 7#7: *1249 FastCGI sent in stderr: "PHP message: ERROR PostmanManageConfigurationAjaxHandler: Array
+(
+    [0] => PostmanWizardSocket Object
+        (
+            [hostname] => smtp.umbler.com
+            [hostnameDomainOnly] => umbler.com
+            [port] => 587
+            [protocol] => SMTP
+            [secure] => 1
+            [mitm] => 
+            [reportedHostname] => UBMSA01.spo2.umbler.com
+            [reportedHostnameDomainOnly] => umbler.com
+            [message] => 
+            [startTls] => 1
+            [authPlain] => 1
+            [auth_login] => 1
+            [auth_crammd5] => 
+            [auth_xoauth] => 
+            [auth_none] => 
+            [try_smtps] => 
+            [success] => 1
+            [transport] => smtp
+            [label] => 
+            [id] => smtp.umbler.com_587
+        )
+
+    [1] => PostmanWizardSocket Object
+        (
+            [hostname] => mandrillapp.com
+            [hostnameDomainOnly] => mandrillapp.com
+            [port] => 443
+            [protocol] => HTTPS
+            [secure] => 1
+            [mitm] => 
+            [reportedHostname] => mandrillapp.com
+            [reportedHostnameDomainOnly] => mandrillapp.com
+            [message] => 
+            [startTls] => 
+            [authPlain] => 
+            [auth_login] => 
+            [auth_crammd5] => 
+            [auth_xoauth] => 
+            [auth_none] => 
+            [try_smtps] => 
+            [success] => 1
+            [transport] => mandrill_api
+            [label] => 
+            [id] => mandrillapp.com_443
+        )
+
+    [2] => PostmanWizardSocket Object
+        (
+            [hostname] => api.sendgrid.com
+            [hostnameDomainOnly] => sendgrid.com
+            [port] => 443
+            [protocol] => HTTPS
+            [secure] => 1
+            [mitm] => 
+            [reportedHostname] => api.sendgrid.com
+            [reportedHostnameDomainOnly] => sendgrid.com
+            [message] => 
+            [startTls] => 
+            [authPlain] => 
+            [auth_login] => 
+    
+2019/12/23 14:47:01 [error] 7#7: *1249 FastCGI sent in stderr: "] => 
+            [auth_xoauth] => 
+            [auth_none] => 
+            [try_smtps] => 
+            [success] => 
+            [transport] => smtp
+            [label] => 
+            [id] => smtp.umbler.com_25
+        )
+
+)
+PHP message: ERROR PostmanManageConfigurationAjaxHandler: SMTP - umbler.com:587PHP message: ERROR PostmanManageConfigurationAjaxHandler: Mandrill APIPHP message: ERROR PostmanManageConfigurationAjaxHandler: SendGrid APIPHP message: ERROR PostmanManageConfigurationAjaxHandler: Mailgun APIPHP message: ERROR PostmanManageConfigurationAjaxHandler: PHP message: ERROR PostmanManageConfigurationAjaxHandler:" while reading response header from upstream, client: 172.20.0.1, server: localhost, request: "POST /wp-admin/admin-ajax.php HTTP/1.1", upstream: "fastcgi://172.20.0.2:9000", host: "dev.apinunker.com.br", referrer: "https://dev.apinunker.com.br/wp-admin/admin.php?page=postman%2Fconfiguration_wizard"
+2020/01/20 02:43:52 [error] 6#6: *898 FastCGI sent in stderr: "PHP message: Erro de banco de dados do WordPress Unknown column 'wp_users.email' in 'field list' para a consulta SELECT wp_users.email FROM wp_users WHERE 1=1 ORDER BY user_login ASC  feita por require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, nkr_api_usuario_public_get, get_users, WP_User_Query->__construct, WP_User_Query->query" while reading response header from upstream, client: 172.20.0.1, server: localhost, request: "GET /wp-json/api/v1/usuarios HTTP/1.1", upstream: "fastcgi://172.20.0.2:9000", host: "dev.apinunker.com.br", referrer: "http://127.0.0.1:5500/"

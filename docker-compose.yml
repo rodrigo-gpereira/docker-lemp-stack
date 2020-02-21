@@ -1,0 +1,52 @@
+version: "3"
+services:
+  php:
+    build:
+      context: ./docker/php
+    env_file:
+      - .env
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+      - .:/var/www
+    networks:
+      dev-network:
+        ipv4_address: ${IP_RANGE}.2
+
+  nginx:
+    build:
+      context: ./docker/nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/nginx/log:/var/log/nginx
+      - ./public:/var/www/public
+      - ./certs:/var/www/certs
+    networks:
+      dev-network:
+        ipv4_address: ${IP_RANGE}.3
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    ports:
+      - 3306:3306
+    volumes:
+      - ./docker/mysql/custom.cnf:/etc/mysql/conf.d/custom.cnf
+    networks:
+      dev-network:
+        ipv4_address: ${IP_RANGE}.4
+
+networks:
+  dev-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: ${IP_RANGE}.0/16
