@@ -10,15 +10,14 @@ BLUE='\033[0;34m'
 YELLOW='\033[0;93m'
 NC='\033[0m'
 
-ETC_HOSTS=/etc/hosts
-IP=$3
-
 HOSTNAME=$1
 QUESTION=$2
+NGINX_IP=$3
+ETC_HOSTS=/etc/hosts
 
 if [ ${QUESTION} == "a" ]; then
 
-	HOSTS_LINE="$IP\t$HOSTNAME"
+	HOSTS_LINE="$NGINX_IP\t$HOSTNAME"
 
 	if [ -n "$(grep $HOSTNAME /etc/hosts)" ]; then
 		echo -e ${YELLOW}"$HOSTNAME already exists: $(grep $HOSTNAME $ETC_HOSTS) ${NC}"

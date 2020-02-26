@@ -30,7 +30,8 @@ services:
         ipv4_address: ${IP_RANGE}.3
 
   mysql:
-    image: mysql:5.7
+    build:
+      context: ./docker/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=${DB_NAME}
