@@ -55,6 +55,8 @@ http {
 
         location / {
             try_files \$uri \$uri/ /index.php?\$query_string;
+	    # Habilitar o Cors para todas origens	
+	    add_header Access-Control-Allow-Origin "*";
         }
 
         location ~ \.php$ {
