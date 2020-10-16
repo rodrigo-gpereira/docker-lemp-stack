@@ -6,7 +6,6 @@
 # Author: Michael Conigliaro
 #
 
-
 WP_OWNER=www-data # &lt;-- wordpress owner
 WP_GROUP=$SUDO_USER # &lt;-- wordpress group
 WP_ROOT=public # &lt;-- wordpress root directory

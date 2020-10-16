@@ -11,9 +11,14 @@ NGINX_DIR='./docker/nginx'
 WEB_DIR='./public'
 SSL_DIR='./certs'
 USER='www-data'
+ROOTCA_PEM=${HOME}'/.local/share/mkcert/rootCA.pem'
 
-echo -e "Insira o IP RANGE ex 172.18.0:"
-read IP_RANGE
+LAST_IP=`docker inspect -f '{{.IPAM.Config}} - {{.Name}}' $(docker network ls --format "{{.Name}}") | sort -h | grep -E 172 | awk -F. END'{print $2+1}'`
+
+IP_RANGE='172.'$LAST_IP'.0'
+
+#echo -e "Insira o IP RANGE ex 172.18.0:"
+#read IP_RANGE
 
 # Sanity check
 [ $(id -g) != "0" ] && die "Script must be run as root."
@@ -55,8 +60,6 @@ http {
 
         location / {
             try_files \$uri \$uri/ /index.php?\$query_string;
-	    # Habilitar o Cors para todas origens	
-	    add_header Access-Control-Allow-Origin "*";
         }
 
         location ~ \.php$ {
@@ -147,10 +150,12 @@ cd certs
 
 mkcert $1
 
+#copiar o Arquivos de RootCa
+cp $ROOTCA_PEM rootCA.pem
+
 cd $current_dir
 
 chown -R ${SUDO_USER}:${SUDO_USER} ../$1
-
 
 #Executar o Docker Compose
 docker-compose up -d
@@ -159,5 +164,16 @@ docker-compose up -d
 chmod +x cli/setup-hosts-file.sh
 cli/setup-hosts-file.sh $1 a $IP_RANGE.3
 
+#Configurar o Host no contianer do php
+docker exec -it ${1//[-._]/}_php_1 /var/www/cli/setup-hosts-file.sh $1 a $IP_RANGE.3
+
+#configurar o certificado RootCa no container php
+docker exec -it ${1//[-._]/}_php_1 mkdir /usr/local/share/ca-certificates/extra
+docker exec -it ${1//[-._]/}_php_1 cp /var/www/certs/rootCA.pem /usr/local/share/ca-certificates/extra/rootCA.crt
+docker exec -it ${1//[-._]/}_php_1 update-ca-certificates
+
 #Mensagem de Finalização
 ok "Site Created for $1"
+
+#force Docker Compose Mysql
+docker-compose up -d mysql
