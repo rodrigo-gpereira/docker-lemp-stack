@@ -139,6 +139,36 @@ IP_RANGE=$IP_RANGE
 
 EOF
 
+#Generate site_start.sh
+cat > site_start.sh <<EOF
+
+#!/usr/bin/env bash
+#
+# Iniciar o ambiente desenvolvimento
+
+docker-compose up -d
+
+docker exec -it ${1//[-._]/}_php_1 /var/www/cli/setup-hosts-file.sh $1 a $IP_RANGE.3
+
+EOF
+
+#Generate site_stop.sh
+cat > site_stop.sh <<EOF
+
+#!/usr/bin/env bash
+#
+# Iniciar o ambiente desenvolvimento
+
+docker-compose stop
+
+docker exec -it ${1//[-._]/}_php_1 /var/www/cli/setup-hosts-file.sh $1 r $IP_RANGE.3
+
+EOF
+
+#permissão de execução
+chmod +x site_start.sh
+chmod +x site_stop.sh
+
 # Creating {certs} Directorie
 mkdir -p $SSL_DIR
 
@@ -172,8 +202,14 @@ docker exec -it ${1//[-._]/}_php_1 mkdir /usr/local/share/ca-certificates/extra
 docker exec -it ${1//[-._]/}_php_1 cp /var/www/certs/rootCA.pem /usr/local/share/ca-certificates/extra/rootCA.crt
 docker exec -it ${1//[-._]/}_php_1 update-ca-certificates
 
+
 #Mensagem de Finalização
 ok "Site Created for $1"
 
 #force Docker Compose Mysql
-docker-compose up -d mysql
+ok "Reiniciar os container criados"
+
+docker-compose stop
+ok "Aguarde 5 segundos"
+sleep 5s
+docker-compose up -d
