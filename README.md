@@ -51,6 +51,34 @@ $ chmod +x Docker-Lemp/cli/*
 $ sudo cli/site-create.sh dev.exemplo.com.br
 ```
 
+<p> Após a finalização da Build você tera a pasta do site em ~/Wordscape/dev.exemplo.com.br</p>
+
+```
+├── certs
+├── cli
+├── docker
+│   ├── mysql
+│   ├── nginx
+│   │   └── log
+│   └── php
+└── public
+```
+
+<br/>
+
+# Iniciar o Site
+<p>Acesse a pasta do site ex: ~/Workspace/dev.exemplo.com.br e execute o comando</p>
+
+```
+$ ./site_start.sh
+```
+
+# Parar o Site
+<p>Acesse a pasta do site ex: ~/Workspace/dev.exemplo.com.br e execute o comando</p>
+
+```
+$ ./site_stop.sh
+```
 
 # Excluir Site
 <p>Acesse a pasta de provisionamento ex: ~/Workspace/Docker-Lemp execute o comando</p>
