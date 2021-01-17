@@ -11,7 +11,7 @@ NGINX_DIR='./docker/nginx'
 WEB_DIR='./public'
 SSL_DIR='./certs'
 USER='www-data'
-ROOTCA_PEM=${HOME}'/.local/share/mkcert/rootCA.pem'
+ROOTCA_PEM='/home/'${SUDO_USER}'/.local/share/mkcert/rootCA.pem'
 
 LAST_IP=`docker inspect -f '{{.IPAM.Config}} - {{.Name}}' $(docker network ls --format "{{.Name}}") | sort -h | grep -E 172 | awk -F. END'{print $2+1}'`
 
@@ -147,8 +147,12 @@ cat > site_start.sh <<EOF
 # Iniciar o ambiente desenvolvimento
 
 docker-compose up -d
+docker exec -it ${1//[._]/}_php_1 /var/www/cli/setup-hosts-file.sh $1 a $IP_RANGE.3
 
-docker exec -it ${1//[-._]/}_php_1 /var/www/cli/setup-hosts-file.sh $1 a $IP_RANGE.3
+#configurar o certificado RootCa no container php
+docker exec -it ${1//[._]/}_php_1 mkdir /usr/local/share/ca-certificates/extra
+docker exec -it ${1//[._]/}_php_1 cp /var/www/certs/rootCA.pem /usr/local/share/ca-certificates/extra/rootCA.crt
+docker exec -it ${1//[._]/}_php_1 update-ca-certificates
 
 EOF
 
@@ -157,10 +161,9 @@ cat > site_stop.sh <<EOF
 
 #!/usr/bin/env bash
 #
-# Iniciar o ambiente desenvolvimento
+# Parar o Ambiente de Desenvolvimento
 
-docker exec -it ${1//[-._]/}_php_1 /var/www/cli/setup-hosts-file.sh $1 r $IP_RANGE.3
-
+docker exec -it ${1//[._]/}_php_1 /var/www/cli/setup-hosts-file.sh $1 r $IP_RANGE.3
 docker-compose stop
 
 EOF
@@ -178,14 +181,14 @@ current_dir=$PWD
 #Generate Certificate
 cd certs
 
-mkcert $1
-
-#copiar o Arquivos de RootCa
+#copia os arquivo de RootCa
 cp $ROOTCA_PEM rootCA.pem
 
-cd $current_dir
+chown -R ${SUDO_USER}:${SUDO_USER} ../
 
-chown -R ${SUDO_USER}:${SUDO_USER} ../$1
+sudo -u ${SUDO_USER} mkcert $1
+
+cd $current_dir
 
 #Executar o Docker Compose
 docker-compose up -d

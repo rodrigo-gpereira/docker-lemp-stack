@@ -39,13 +39,13 @@ $ git clone https://github.com/digoartmusic/docker-lemp-stack.git Docker-Lemp
 <p>Aplique as permissões de execução nos arquivos do diretório cli</p>
 
 ```
-$ sudo chmod +x Docker-Lemp/cli/*
+$ chmod +x Docker-Lemp/cli/*
 ```
 
 <br/>
 
 # Criar site
-<p>Dentro do seu ambiente de trabalho exemplo ~/Workspace execute o comando</p>
+<p>Acesse a pasta de provisionamento ex: ~/Workspace/Docker-Lemp execute o comando</p>
 
 ```
 $ sudo cli/site-create.sh dev.exemplo.com.br
@@ -53,7 +53,7 @@ $ sudo cli/site-create.sh dev.exemplo.com.br
 
 
 # Excluir Site
-<p>Dentro do seu ambiente de trabalho exemplo ~/Workspace execute o comando</p>
+<p>Acesse a pasta de provisionamento ex: ~/Workspace/Docker-Lemp execute o comando</p>
 
 ```
 $ sudo cli/site-delete.sh dev.exemplo.com.br
