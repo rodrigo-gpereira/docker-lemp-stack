@@ -159,9 +159,9 @@ cat > site_stop.sh <<EOF
 #
 # Iniciar o ambiente desenvolvimento
 
-docker-compose stop
-
 docker exec -it ${1//[-._]/}_php_1 /var/www/cli/setup-hosts-file.sh $1 r $IP_RANGE.3
+
+docker-compose stop
 
 EOF
 
