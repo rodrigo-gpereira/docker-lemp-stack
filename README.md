@@ -6,7 +6,7 @@ Utilizado para provisionar um ambiente local de desenvolvimento com servidor NGI
 
 ## Container - PHP
 - Versão 7.3-fpm
-- Xdebug
+- Xdebug 2.9.8
 - Libs = GD, IMAGICK, SOAP, PDO
 
 ## Container - Nginx
