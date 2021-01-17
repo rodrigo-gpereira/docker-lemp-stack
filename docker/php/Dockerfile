@@ -54,3 +54,5 @@ RUN yes | pecl install xdebug \
 COPY ./php.ini /usr/local/etc/php/
 
 RUN usermod -u 1000 www-data
+
+WORKDIR /var/www
