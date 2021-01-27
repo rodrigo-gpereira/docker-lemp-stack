@@ -1,6 +1,7 @@
 <h1 align="center">Docker Lemp Stack</h1>
 
 Utilizado para provisionar um ambiente local de desenvolvimento com servidor NGINX PHP MYSQL.
+[Tutorial no Yutube](https://youtu.be/ZMP8dhkPiF0)
 
 # Containers
 
