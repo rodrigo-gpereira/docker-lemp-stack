@@ -1,7 +1,7 @@
 <h1 align="center">Docker Lemp Stack</h1>
 
 Utilizado para provisionar um ambiente local de desenvolvimento com servidor NGINX PHP MYSQL.
-[Tutorial no Youtube](https://youtu.be/ZMP8dhkPiF0 target="_blank")
+[Tutorial no Youtube](https://youtu.be/ZMP8dhkPiF0)
 
 # Containers
 
@@ -21,9 +21,9 @@ Utilizado para provisionar um ambiente local de desenvolvimento com servidor NGI
 # Pré requisitos 
 <p> Para o uso deste repositório você deve ter instalado em seu sistema.</p>
 
-- [Docker](https://www.docker.com/ target="_blank")
-- [Docker-compose](https://github.com/docker/compose target="_blank")
-- [Mkcert](https://github.com/FiloSottile/mkcert target="_blank")
+- [Docker](https://www.docker.com/)
+- [Docker-compose](https://github.com/docker/compose)
+- [Mkcert](https://github.com/FiloSottile/mkcert)
 
 <br/>
 
