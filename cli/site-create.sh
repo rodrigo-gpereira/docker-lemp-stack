@@ -70,6 +70,10 @@ http {
             fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
         }
 
+        location ~* \.(eot|ttf|woff|woff2)$ {
+	    add_header Access-Control-Allow-Origin *;
+	    }
+
         error_log /var/log/nginx/error.log;
         access_log /var/log/nginx/access.log;
     }
