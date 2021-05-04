@@ -32,6 +32,7 @@ services:
   mysql:
     build:
       context: ./docker/mysql
+    command: --default-authentication-plugin=mysql_native_password
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=${DB_NAME}
@@ -44,6 +45,14 @@ services:
     networks:
       dev-network:
         ipv4_address: ${IP_RANGE}.4
+  mailhog:
+    image: mailhog/mailhog:v1.0.0
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      dev-network:
+        ipv4_address: ${IP_RANGE}.5
 
 networks:
   dev-network:
