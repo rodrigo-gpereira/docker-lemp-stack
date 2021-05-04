@@ -14,7 +14,10 @@ Utilizado para provisionar um ambiente local de desenvolvimento com servidor NGI
 - Versão Latest
 
 ## Container - Mysql
-- Versão 5.7.19
+- Versão 8.0
+
+## Container - Mailhog
+- Versão 1.0.0
 
 <br/>
 
