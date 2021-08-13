@@ -17,6 +17,7 @@ docker stop ${1//[-._]/}_php_1
 docker stop ${1//[-._]/}_nginx_1
 docker stop ${1//[-._]/}_mysql_1
 docker stop ${1//[-._]/}_mailhog_1
+docker stop ${1//[-._]/}_wordmove_1
 
 #remover o Arquivos hosts do terminal local
 cli/setup-hosts-file.sh $1 r
@@ -28,6 +29,7 @@ docker rm -v ${1//[-._]/}_php_1
 docker rm -v ${1//[-._]/}_nginx_1
 docker rm -v ${1//[-._]/}_mysql_1
 docker rm -v ${1//[-._]/}_mailhog_1
+docker rm -v ${1//[-._]/}_wordmove_1
 
 docker network rm ${1//[-._]/}_dev-network
 
