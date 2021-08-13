@@ -19,6 +19,9 @@ Utilizado para provisionar um ambiente local de desenvolvimento com servidor NGI
 ## Container - Mailhog
 - Versão 1.0.0
 
+## Container - Wordmove
+- Versão 5.2.1
+
 <br/>
 
 # Pré requisitos 
@@ -64,8 +67,11 @@ $ sudo cli/site-create.sh dev.exemplo.com.br
 │   ├── mysql
 │   ├── nginx
 │   │   └── log
-│   └── php
-└── public
+│   ├── php
+|   └── wordmove
+|   
+├── public
+└── wordmove
 ```
 
 <br/>
