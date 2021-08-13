@@ -54,20 +54,20 @@ services:
       dev-network:
         ipv4_address: ${IP_RANGE}.5
   wordmove:
-      build:
-        context: ./docker/wordmove
-      tty: true
-      volumes:
-        - ./wordmove:/wordmove
-        - ./public:/var/www/public
-        - ~/.ssh:/tmp/.ssh:ro
-      networks:
-        dev-network:
-          ipv4_address: ${IP_RANGE}.6
-
+    build:
+      context: ./docker/wordmove
+    tty: true
+    volumes:
+      - ./wordmove:/wordmove
+      - ./public:/var/www/public
+      - ~/.ssh:/tmp/.ssh:ro
+    networks:
+      dev-network:
+        ipv4_address: ${IP_RANGE}.6
 networks:
   dev-network:
     driver: bridge
     ipam:
       config:
         - subnet: ${IP_RANGE}.0/16
+          gateway: ${IP_RANGE}.1
