@@ -183,7 +183,7 @@ global:
   sql_adapter: default
 
 local:
-  vhost: "$1"
+  vhost: "https://$1"
   wordpress_path: "/var/www/public" # use an absolute path here
 
   database:
