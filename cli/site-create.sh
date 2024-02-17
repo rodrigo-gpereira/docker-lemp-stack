@@ -54,7 +54,7 @@ http {
         ssl_certificate /var/www/certs/$1.pem; 
         ssl_certificate_key /var/www/certs/$1-key.pem;
 
-	    server_name $1;
+	      server_name $1;
         root /var/www/public;
 
         index index.php index.html;
@@ -71,7 +71,7 @@ http {
             fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
         }
 
-        location ~* \.(eot|ttf|woff|woff2)$ {
+      location ~* \.(eot|ttf|woff|woff2)$ {
 	    add_header Access-Control-Allow-Origin *;
 	    }
 
@@ -92,7 +92,7 @@ http {
     gzip on;
     gzip_disable "msie6";
     open_file_cache max=100;
-    client_max_body_size 12M;
+    client_max_body_size 64M;
 }
 
 events {
@@ -133,7 +133,7 @@ EOF
 #Generate .env
 cat > .env <<EOF
 
-DB_USER=root
+DB_USER=dbuser
 DB_PASSWORD=root
 DB_NAME=${1//[-._]/}
 DB_HOST=mysql
@@ -152,12 +152,12 @@ cat > site_start.sh <<EOF
 # Iniciar o ambiente desenvolvimento
 
 docker-compose up -d
-docker exec -it ${1//[._]/}_php_1 /var/www/cli/setup-hosts-file.sh $1 a $IP_RANGE.3
+docker exec -it ${1//[._]/}-php-1 /var/www/cli/setup-hosts-file.sh $1 a $IP_RANGE.3
 
 #configurar o certificado RootCa no container php
-docker exec -it ${1//[._]/}_php_1 mkdir /usr/local/share/ca-certificates/extra
-docker exec -it ${1//[._]/}_php_1 cp /var/www/certs/rootCA.pem /usr/local/share/ca-certificates/extra/rootCA.crt
-docker exec -it ${1//[._]/}_php_1 update-ca-certificates
+docker exec -it ${1//[._]/}-php-1 mkdir /usr/local/share/ca-certificates/extra
+docker exec -it ${1//[._]/}-php-1 cp /var/www/certs/rootCA.pem /usr/local/share/ca-certificates/extra/rootCA.crt
+docker exec -it ${1//[._]/}-php-1 update-ca-certificates
 
 EOF
 
@@ -168,7 +168,7 @@ cat > site_stop.sh <<EOF
 #
 # Parar o Ambiente de Desenvolvimento
 
-docker exec -it ${1//[._]/}_php_1 /var/www/cli/setup-hosts-file.sh $1 r $IP_RANGE.3
+docker exec -it ${1//[._]/}-php-1 /var/www/cli/setup-hosts-file.sh $1 r $IP_RANGE.3
 docker-compose stop
 
 EOF
@@ -355,25 +355,25 @@ cd $current_dir
 chmod +x cli/setup-hosts-file.sh
 cli/setup-hosts-file.sh $1 a $IP_RANGE.3
 
-#Executar o Docker Compose
-./site_start.sh
+# #Executar o Docker Compose
+# ./site_start.sh
 
-#configurar o certificado RootCa no container php
-docker exec -it ${1//[-._]/}_php_1 mkdir /usr/local/share/ca-certificates/extra
-docker exec -it ${1//[-._]/}_php_1 cp /var/www/certs/rootCA.pem /usr/local/share/ca-certificates/extra/rootCA.crt
-docker exec -it ${1//[-._]/}_php_1 update-ca-certificates
+# #configurar o certificado RootCa no container php
+# docker exec -it ${1//[._]/}-php-1 mkdir /usr/local/share/ca-certificates/extra
+# docker exec -it ${1//[._]/}-php-1 cp /var/www/certs/rootCA.pem /usr/local/share/ca-certificates/extra/rootCA.crt
+# docker exec -it ${1//[._]/}-php-1 update-ca-certificates
 
 #Mensagem de Finalização
 ok "Site Created for $1"
 
-ok "Aguarde 5 segundos"
-sleep 5s
+# ok "Aguarde 5 segundos"
+# sleep 5s
 
-#force Docker Compose Mysql
-ok "Reiniciar os container criados"
+# #force Docker Compose Mysql
+# ok "Reiniciar os container criados"
 
-./site_stop.sh
-ok "Aguarde 5 segundos"
-sleep 5s
+# ./site_stop.sh
+# ok "Aguarde 5 segundos"
+# sleep 5s
 
-./site_start.sh
+# ./site_start.sh
